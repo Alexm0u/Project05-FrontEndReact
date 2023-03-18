@@ -1,0 +1,11 @@
+body {
+    background-color: blue;
+}
+
+.navbarstyle{
+    font-size:large;
+    display: flex;
+    justify-content: center;
+    background-color: pink;
+    width: 100vw;
+}

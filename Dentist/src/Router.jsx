@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import { About } from './layouts/about/About';
 import { Home } from './layouts/home/Home';
 import { Login } from './layouts/login/Login';
@@ -12,10 +13,10 @@ export const Router = () => {
     <hr />
     <Routes>
         <Route path='/' element={<Home/>} />
-        <Route path='/' element={<Login/>} />
-        <Route path='/' element={<Register/>} />
-        <Route path='/' element={<Services/>} />
-        <Route path='/' element={<About/>} />
+        <Route path='/login' element={<Login/>} />
+        <Route path='/register' element={<Register/>} />
+        <Route path='/services' element={<Services/>} />
+        <Route path='/about' element={<About/>} />
     </Routes>
     </>
   )
