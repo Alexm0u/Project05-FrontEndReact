@@ -12,23 +12,23 @@ export function Register() {
       <div style={{ display: 'block', 
                     width: 700, 
                     padding: 30 }}>
-        <h4>React-Bootstrap Form Component</h4>
+        <h4>Please fill the fields</h4>
         <Form>
             <Form.Group>
                 <Form.Label>Enter your username:</Form.Label>
-                <Form.Control type="text" placeholder="Introduce tu nombre" />
+                <Form.Control type="text" placeholder="Name..." />
             </Form.Group>
             <Form.Group>
                 <Form.Label>Enter your email address:</Form.Label>
-                <Form.Control type="email" placeholder="Enter your your email address" />
+                <Form.Control type="email" placeholder="Email..." />
             </Form.Group>
             <Form.Group>
                 <Form.Label>Enter your password:</Form.Label>
-                <Form.Control type="password" placeholder="Enter your password" />
+                <Form.Control type="password" placeholder="Password..." />
             </Form.Group>
             <br />
             <Button variant="primary" type="submit">
-                Click here to submit form
+                Submit
             </Button>
         </Form>
         </div>
