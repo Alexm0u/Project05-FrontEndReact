@@ -13,9 +13,9 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
+          <Navbar.Brand className='Logo'>Dental Clinic Name</Navbar.Brand>
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link as={Link} to="/services">Services</Nav.Link>
-            <Navbar.Brand className='Logo'>Welcome to my dentist</Navbar.Brand>
             <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
             <NavDropdown title="User" id="basic-nav-dropdown">
               <NavDropdown.Item as={Link} to="/login">Login</NavDropdown.Item>
