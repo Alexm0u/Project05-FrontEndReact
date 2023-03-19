@@ -15,7 +15,8 @@ function NavBar() {
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link as={Link} to="/services">Services</Nav.Link>
-            <Navbar.Brand href="#home" className='Logo'>Welcome to my dentist</Navbar.Brand>
+            <Navbar.Brand className='Logo'>Welcome to my dentist</Navbar.Brand>
+            <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
             <NavDropdown title="User" id="basic-nav-dropdown">
               <NavDropdown.Item as={Link} to="/login">Login</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/register">Register</NavDropdown.Item>

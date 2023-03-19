@@ -6,6 +6,8 @@ body {
     font-size:large;
     display: flex;
     justify-content: center;
-    background-color: pink;
+    background-color: aquamarine;
     width: 100vw;
+    background-position: center;
+    background-size: 10em;
 }
