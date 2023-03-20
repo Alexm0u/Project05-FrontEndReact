@@ -1,14 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import NavBar from '../../common/Navbar/NavBar';
 import './Profile.css';
 import { Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 
+
 export function Profile() {
+
+  let user = {
+    fullName: '',
+    dni: '',
+    phone: '',
+    email: '',
+  };
+  const [valor, setValor] = useState(user);
+  const { fullName, dni, phone, email } = valor;
+  const newValue = ({ target }) => {
+    console.log(target);
+    const { name, value } = target;
+    setValor({ ...valor, [name]: value });
+  }
+
   return (
     <>
       <NavBar />
-      
+
       <div style={{
         display: 'block',
         width: 700,
@@ -18,19 +34,19 @@ export function Profile() {
         <Form>
           <Form.Group>
             <Form.Label>Full Name:</Form.Label>
-            <Form.Control type="text" placeholder="Name..." />
+            <Form.Control type="text"   name="fullName" placeholder="Name and surname..."  value={fullName} onChange={newValue}/>
           </Form.Group>
           <Form.Group>
             <Form.Label>DNI:</Form.Label>
-            <Form.Control type="text" placeholder="DNI..." />
+            <Form.Control type="text"   name="dni" placeholder="DNI / NIF..."  value={dni} onChange={newValue}/>
           </Form.Group>
           <Form.Group>
             <Form.Label>Phone:</Form.Label>
-            <Form.Control type="tel" placeholder="Phone..." />
+            <Form.Control type="tel"   name="phone" placeholder="Phone number..."  value={phone} onChange={newValue}/>
           </Form.Group>
           <Form.Group>
             <Form.Label>Email:</Form.Label>
-            <Form.Control type="email" placeholder="Email..." />
+            <Form.Control type="email"  name="email" placeholder="Email..."  value={email} onChange={newValue}/>
           </Form.Group>
           <br />
           <Form.Select aria-label="Payment Method">
