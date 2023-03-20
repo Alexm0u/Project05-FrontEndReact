@@ -5,7 +5,7 @@ export const Services = () => {
   return (
     <>
     <NavBar />
-    <hr />
+    
     <div>Estás en la página Servicios</div>
 
 

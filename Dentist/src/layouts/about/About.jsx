@@ -6,7 +6,7 @@ export const About = () => {
   return (
     <>
     <NavBar />
-    <hr />
+    
     <div>Estás en la página About</div>
 
 

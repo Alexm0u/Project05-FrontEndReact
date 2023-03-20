@@ -5,7 +5,7 @@ export const Home = () => {
   return (
     <>
     <NavBar />
-    <hr />
+    
     <div>Estás en la página Home</div>
 
 

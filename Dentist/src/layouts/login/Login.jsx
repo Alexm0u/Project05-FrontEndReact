@@ -7,7 +7,7 @@ export function Login() {
   return (
     <>
       <NavBar />
-      <hr />
+      
       <div style={{
         display: 'block',
         width: 700,
@@ -17,7 +17,7 @@ export function Login() {
         <Form>
           <Form.Group>
             <Form.Label>Enter your email:</Form.Label>
-            <Form.Control type="email" placeholder="Enter your your email address" />
+            <Form.Control type="email" placeholder="Enter your email address" />
           </Form.Group>
           <Form.Group>
             <Form.Label>Enter your password:</Form.Label>

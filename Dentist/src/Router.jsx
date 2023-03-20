@@ -11,7 +11,7 @@ import { Services } from './layouts/services/Services';
 export const Router = () => {
   return (
     <>
-    <hr />
+    
     <Routes>
         <Route path='/' element={<Home/>} />;
         <Route path='/login' element={<Login/>} />;

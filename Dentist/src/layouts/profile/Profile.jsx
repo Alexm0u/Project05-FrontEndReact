@@ -8,7 +8,7 @@ export function Profile() {
   return (
     <>
       <NavBar />
-      <hr />
+      
       <div style={{
         display: 'block',
         width: 700,
@@ -18,19 +18,19 @@ export function Profile() {
         <Form>
           <Form.Group>
             <Form.Label>Full Name:</Form.Label>
-            <Form.Control type="text" placeholder="Name input" />
+            <Form.Control type="text" placeholder="Name..." />
           </Form.Group>
           <Form.Group>
             <Form.Label>DNI:</Form.Label>
-            <Form.Control type="text" placeholder="DNI input" />
+            <Form.Control type="text" placeholder="DNI..." />
           </Form.Group>
           <Form.Group>
             <Form.Label>Phone:</Form.Label>
-            <Form.Control type="tel" placeholder="Phone input" />
+            <Form.Control type="tel" placeholder="Phone..." />
           </Form.Group>
           <Form.Group>
             <Form.Label>Email:</Form.Label>
-            <Form.Control type="email" placeholder="Email input" />
+            <Form.Control type="email" placeholder="Email..." />
           </Form.Group>
           <br />
           <Form.Select aria-label="Payment Method">
