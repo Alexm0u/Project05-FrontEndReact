@@ -43,7 +43,7 @@ export function Register() {
             </Form.Group>
             <Form.Group>
                 <Form.Label>Enter your email:</Form.Label>
-                <Form.Control type="email" name="email" placeholder="Enter your email address"  changeFunction={(e) => inputHandler(e)} validateFunction={(e) => inputValidate(e)}/>
+                <Form.Control type="email" name="email" placeholder="Enter your your email address"  changeFunction={(e) => inputHandler(e)} validateFunction={(e) => inputValidate(e)}/>
             </Form.Group>
             <Form.Group>
                 <Form.Label>Enter your password:</Form.Label>

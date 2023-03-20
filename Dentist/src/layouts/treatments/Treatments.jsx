@@ -6,7 +6,7 @@ export const Treatments = () => {
     <>
     <NavBar />
     
-    <div>Estás en la página Tratamientos</div>
+    <div>Estás en la página Treatments</div>
 
 
     </>
