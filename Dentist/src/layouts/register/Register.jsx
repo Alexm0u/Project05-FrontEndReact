@@ -12,12 +12,12 @@ export function Register() {
         password: '',
     };
 
-    const [valor, setValor] = useState(user);
-    const {fullname, email, password} = valor;
-    const newValue = ({target}) => {
-        const {name, value} = target;
-        setValor ({...valor,[name]:value})
-    }
+    // const [valor, setValor] = useState(user);
+    // const {fullname, email, password} = valor;
+    // const newValue = ({target}) => {
+    //     const {name, value} = target;
+    //     setValor ({...valor,[name]:value})
+    // }
   return (
       <>
       <NavBar />
@@ -28,11 +28,11 @@ export function Register() {
         <h4>Please fill the fields</h4>
         <Form>
             <Form.Group>
-                <Form.Label>Enter your username:</Form.Label>
+                <Form.Label>Enter your user name:</Form.Label>
                 <Form.Control type="text" placeholder="Name..." />
             </Form.Group>
             <Form.Group>
-                <Form.Label>Enter your email address:</Form.Label>
+                <Form.Label>Enter your email:</Form.Label>
                 <Form.Control type="email" placeholder="Email..." />
             </Form.Group>
             <Form.Group>
