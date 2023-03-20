@@ -8,7 +8,7 @@ export function Register() {
   return (
       <>
       <NavBar />
-      <hr />
+      
       <div style={{ display: 'block', 
                     width: 700, 
                     padding: 30 }}>
