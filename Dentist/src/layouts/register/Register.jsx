@@ -13,6 +13,15 @@ export function Register() {
         password: '',
     };
 
+    // const inputHandler = (e) => {
+    //     setUserData((prevState) => ({
+    //         ...prevState,
+    //         [e.target.name]: e.target.value,
+    //     }));
+    // }
+
+    // const inputValidate = (e) => {};
+
     const [valor, setValor] = useState(user);
     const {fullname, email, password} = valor;
     const newValue = ({target}) => {
@@ -30,15 +39,15 @@ export function Register() {
         <Form>
             <Form.Group>
                 <Form.Label>Enter your name:</Form.Label>
-                <Form.Control type="text" name="fullname" placeholder="Name and Surname..." value={fullname} onChange={newValue} />
+                <Form.Control type="text" name="fullname" placeholder="Name and Surname..." changeFunction={(e) => inputHandler(e)} validateFunction={(e) => inputValidate(e)}/>
             </Form.Group>
             <Form.Group>
                 <Form.Label>Enter your email:</Form.Label>
-                <Form.Control type="email" name="email" placeholder="Enter your your email address"  value={email} onChange={newValue} />
+                <Form.Control type="email" name="email" placeholder="Enter your email address"  changeFunction={(e) => inputHandler(e)} validateFunction={(e) => inputValidate(e)}/>
             </Form.Group>
             <Form.Group>
                 <Form.Label>Enter your password:</Form.Label>
-                <Form.Control type="password" name="password" placeholder="Enter your password"  value={password} onChange={newValue} />
+                <Form.Control type="password" name="password" placeholder="Enter your password"  changeFunction={(e) => inputHandler(e)} validateFunction={(e) => inputValidate(e)}/>
             </Form.Group>
             <br />
             <Button variant="primary" type="submit">
