@@ -3,6 +3,7 @@ import { Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import NavBar from '../../common/Navbar/NavBar';
 import './Register.css';
+import { useState } from 'react';
 
 export function Register() {
 
@@ -12,12 +13,12 @@ export function Register() {
         password: '',
     };
 
-    // const [valor, setValor] = useState(user);
-    // const {fullname, email, password} = valor;
-    // const newValue = ({target}) => {
-    //     const {name, value} = target;
-    //     setValor ({...valor,[name]:value})
-    // }
+    const [valor, setValor] = useState(user);
+    const {fullname, email, password} = valor;
+    const newValue = ({target}) => {
+        const {name, value} = target;
+        setValor ({...valor,[name]:value})
+    }
   return (
       <>
       <NavBar />
@@ -28,16 +29,16 @@ export function Register() {
         <h4>Please fill the fields</h4>
         <Form>
             <Form.Group>
-                <Form.Label>Enter your user name:</Form.Label>
-                <Form.Control type="text" placeholder="Name..." />
+                <Form.Label>Enter your name:</Form.Label>
+                <Form.Control type="text" name="fullname" placeholder="Name and Surname..." value={fullname} onChange={newValue} />
             </Form.Group>
             <Form.Group>
                 <Form.Label>Enter your email:</Form.Label>
-                <Form.Control type="email" placeholder="Email..." />
+                <Form.Control type="email" name="email" placeholder="Enter your your email address"  value={email} onChange={newValue} />
             </Form.Group>
             <Form.Group>
                 <Form.Label>Enter your password:</Form.Label>
-                <Form.Control type="password" placeholder="Password..." />
+                <Form.Control type="password" name="password" placeholder="Enter your password"  value={password} onChange={newValue} />
             </Form.Group>
             <br />
             <Button variant="primary" type="submit">
