@@ -5,6 +5,19 @@ import NavBar from '../../common/Navbar/NavBar';
 import './Register.css';
 
 export function Register() {
+
+    let user = {
+        fullname: '',
+        email: '',
+        password: '',
+    };
+
+    const [valor, setValor] = useState(user);
+    const {fullname, email, password} = valor;
+    const newValue = ({target}) => {
+        const {name, value} = target;
+        setValor ({...valor,[name]:value})
+    }
   return (
       <>
       <NavBar />

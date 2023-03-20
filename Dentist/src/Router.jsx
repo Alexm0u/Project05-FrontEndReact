@@ -5,7 +5,7 @@ import { Home } from './layouts/home/Home';
 import { Login } from './layouts/login/Login';
 import { Profile } from './layouts/profile/Profile';
 import { Register } from './layouts/register/Register';
-import { Services } from './layouts/services/Services';
+import { Treatments } from './layouts/treatments/Treatments';
 
 
 export const Router = () => {
@@ -16,7 +16,7 @@ export const Router = () => {
         <Route path='/' element={<Home/>} />;
         <Route path='/login' element={<Login/>} />;
         <Route path='/register' element={<Register/>} />;
-        <Route path='/services' element={<Services/>} />;
+        <Route path='/treatments' element={<Treatments/>} />;
         <Route path='/about' element={<About/>} />;
         <Route path='/profile' element={<Profile/>}/>;
     </Routes>

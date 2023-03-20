@@ -1,12 +1,12 @@
 import React from 'react'
 import NavBar from '../../common/Navbar/NavBar'
 
-export const Services = () => {
+export const Treatments = () => {
   return (
     <>
     <NavBar />
     
-    <div>Estás en la página Servicios</div>
+    <div>Estás en la página Tratamientos</div>
 
 
     </>
