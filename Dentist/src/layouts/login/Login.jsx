@@ -17,6 +17,7 @@ export function Login() {
         const {name, value} = target;
         setValor({...valor,[name]:value});
     }
+    return (
     <>
       <NavBar />
 
@@ -32,7 +33,7 @@ export function Login() {
           </Form.Group>
           <Form.Group>
                 <Form.Label>Password:</Form.Label>
-            <Form.Control type="password" name="password" placeholder="Enter your password" value={password} onChange={newValue} />
+            <Form.Control type="password" name="password" placeholder="Password..." value={password} onChange={newValue} />
           </Form.Group>
           <br />
           <div className='botones'>
@@ -43,5 +44,5 @@ export function Login() {
         </Form>
       </div>
     </>
-  ;
+    );
 }
