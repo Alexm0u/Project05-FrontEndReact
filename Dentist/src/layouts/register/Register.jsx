@@ -1,9 +1,12 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { Form } from 'react-bootstrap';
+import { InputText } from '../../common/InputText/InputText';
+import { validate } from '../../helpers/useful';
 import Button from 'react-bootstrap/Button';
 import NavBar from '../../common/Navbar/NavBar';
 import './Register.css';
-import { useState } from 'react';
+
 
 export function Register() {
 

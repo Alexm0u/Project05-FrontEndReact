@@ -1,6 +1,8 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import NavBar from '../../common/Navbar/NavBar'
 import { Form } from 'react-bootstrap';
+import { InputText } from '../../common/InputText/InputText';
+import { validate } from '../../helpers/useful';
 import Button from 'react-bootstrap/Button';
 
 export function Login() {

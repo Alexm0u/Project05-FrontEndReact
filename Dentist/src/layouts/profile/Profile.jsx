@@ -1,7 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import NavBar from '../../common/Navbar/NavBar';
 import './Profile.css';
 import { Form } from 'react-bootstrap';
+import { InputText } from '../../common/InputText/InputText';
+import { validate } from '../../helpers/useful';
 import Button from 'react-bootstrap/Button';
 
 
@@ -50,7 +52,7 @@ export function Profile() {
           </Form.Group>
           <br />
           <Form.Select aria-label="Payment Method">
-            <option>Choose your payment</option>
+            <option>Payment method</option>
             <option value="1">Card</option>
             <option value="2">Cash</option>
             <option value="3">Paypal</option>
