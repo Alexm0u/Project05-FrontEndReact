@@ -7,17 +7,16 @@ import Button from 'react-bootstrap/Button';
 
 export function Login() {
   let user = {
-    email: '',
-    password: ''
-  };
-  const [valor, setValor] = useState(user);
-  const { email, password } = valor;
-  const newValue = ({ target }) => {
-    console.log(target);
-    const { name, value } = target;
-    setValor({ ...valor, [name]: value });
-  }
-  return (
+        email: '',
+        password: ''
+    };
+    const [valor, setValor] = useState(user);
+    const { email, password} = valor;
+    const newValue = ({target}) => {
+        console.log(target);
+        const {name, value} = target;
+        setValor({...valor,[name]:value});
+    }
     <>
       <NavBar />
 
@@ -29,12 +28,12 @@ export function Login() {
         <h4>Login</h4>
         <Form>
           <Form.Group>
-            <Form.Label>Enter your email:</Form.Label>
-            <Form.Control type="email" name="email" placeholder="Email..." value={email} onChange={newValue} />
+            <Form.Label>Email:</Form.Label>
+            <Form.Control type="email"  name="email" placeholder="Email..."  value={email} onChange={newValue}/>
           </Form.Group>
           <Form.Group>
-            <Form.Label>Enter your password:</Form.Label>
-            <Form.Control type="password" name="password" placeholder="Password..." value={password} onChange={newValue} />
+            <Form.Label>Password:</Form.Label>
+            <Form.Control type="password" name="password" placeholder="Enter your password" value={password} onChange={newValue} />
           </Form.Group>
           <br />
           <div className='botones'>
