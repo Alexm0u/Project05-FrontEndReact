@@ -40,7 +40,6 @@ export function Register() {
     };
 
     useEffect(() => {
-        console.log(credenciales);
         for (let error in credencialesError) {
             if (credencialesError[error] !== "") {
                 setRegisterAct(false);
@@ -97,14 +96,14 @@ export function Register() {
             <NavBar />
             <hr />
             <div style={{ display: "block", width: 700, padding: 30 }}>
-                <h4>Crea tu usuario</h4>
+                <h4>New User:</h4>
                 <Container>
                     <Row className="registerForm">
                         <Col lg={6}>
                             <Form>
                                 <Form.Group>
                                     <Form.Label>
-                                        Enter your Name and Surname:
+                                        Full name:
                                     </Form.Label>
                                     <InputText
                                         className={
@@ -115,7 +114,7 @@ export function Register() {
                                         }
                                         type={"text"}
                                         name={"fullName"}
-                                        placeholder={"Enter your complete name"}
+                                        placeholder={"Name and surname..."}
                                         required={true}
                                         changeFunction={(e) => inputHandler(e)}
                                         blurFunction={(e) => checkError(e)}
@@ -124,7 +123,7 @@ export function Register() {
                                 <div>{credencialesError.fullnameError}</div>
                                 <Form.Group>
                                     <Form.Label>
-                                        Enter your email address:
+                                        Email:
                                     </Form.Label>
                                     <InputText
                                         className={
@@ -134,7 +133,7 @@ export function Register() {
                                         }
                                         type={"email"}
                                         name={"email"}
-                                        placeholder={"Enter your email"}
+                                        placeholder={"Email..."}
                                         required={true}
                                         changeFunction={(e) => inputHandler(e)}
                                         blurFunction={(e) => checkError(e)}
@@ -143,7 +142,7 @@ export function Register() {
                                 <div>{credencialesError.emailError}</div>
                                 <Form.Group>
                                     <Form.Label>
-                                        Enter your password:
+                                        Password:
                                     </Form.Label>
                                     <InputText
                                         className={
@@ -154,7 +153,7 @@ export function Register() {
                                         }
                                         type={"password"}
                                         name={"password"}
-                                        placeholder={"Enter your password"}
+                                        placeholder={"Password..."}
                                         required={true}
                                         changeFunction={(e) => inputHandler(e)}
                                         blurFunction={(e) => checkError(e)}
@@ -171,7 +170,7 @@ export function Register() {
                                     variant="primary"
                                     onClick={registerUser}
                                 >
-                                    Register User
+                                    Create User
                                 </Button>
                             </Form>
                         </Col>

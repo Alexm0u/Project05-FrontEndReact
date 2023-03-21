@@ -1,11 +1,11 @@
 import React, { useState, useEffect }  from 'react';
 import { Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
-import { InputText } from "../../common/InputText/InputText";
-import NavBar from "../../common/Navbar/NavBar";
+import { InputText } from '../../common/InputText/InputText';
+import NavBar from '../../common/Navbar/NavBar';
 import { getUserData } from '../services/apiCalls';
 import './Profile.css';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 
 export const Profile = () => {
