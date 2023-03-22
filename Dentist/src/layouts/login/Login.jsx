@@ -11,6 +11,7 @@ import { login } from '../userSlice';
 import { useDispatch } from 'react-redux'
 
 
+
 export function Login() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -83,9 +84,9 @@ export function Login() {
         }));
     };
 
-    const logeame = () => {
+    const logeame = () => { 
         logMe(credenciales)
-          .then((respuesta) => {
+          .then((respuesta) => { 
             const decToken = decodeToken (respuesta.data)
             let datosBackend = {
               token: respuesta.data,
@@ -94,12 +95,11 @@ export function Login() {
             console.log(respuesta.data)
             //Este es el momento en el que guardo en REDUX
             dispatch(login({ credentials: datosBackend }));
+            setTimeout(() => {
+                navigate("/profile");
+              }, 300);
     
-            //Una vez nos hemos logeado...mostramos mensaje de bienvenida...
-            setWelcome(`Bienvenid@ de nuevo ${datosBackend.usuario.name}`);
-                setTimeout(() => {
-                    navigate("/profile");
-                }, 2000);
+            
             })
             .catch((error) => console.log(error));
     };
