@@ -2,12 +2,19 @@ import React, { useEffect, useState } from 'react'
 import { InputText } from '../../common/InputText/InputText';
 import NavBar from '../../common/Navbar/NavBar';
 import { nuevoAppointment } from '../services/apiCalls';
+import { Form, Button } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+import { userData } from '../userSlice';
 
 export const NewAppointment = () => {
+
+    const credencialesRedux = useSelector(userData);
+    console.log(credencialesRedux.credentials.token)
 
         const [appointment, setAppointment] = useState({
             service_id: '',
             doctor_id: '',
+            user_id:'',
             payment: '',
             date: '',
         });
@@ -18,15 +25,28 @@ export const NewAppointment = () => {
                 [e.target.name]: e.target.value,
             }));
         };
-        useEffect(()=>{
-            if (appointment.name === ""){
-                nuevoAppointment().then(
-                    resultado => {console.log(resultado)}
-                ).catch(error => (console.log(error)))
-            }
-        }, [appointment]);
+        // useEffect(()=>{
+        //     if (appointment.name === ""){
+        //         nuevoAppointment().then(
+        //             resultado => {console.log(resultado)}
+        //         ).catch(error => (console.log(error)))
+        //     }
+        // }, [appointment]);
 
         const checkError = (e) => {}
+
+        const newAppointment = () => {
+            nuevoAppointment(appointment, credencialesRedux.credentials.token )
+            console.log(regAppointment)
+            .then(regAppointment => {
+                setAppointment(regAppointment.data)
+                
+            })
+            .catch(error => {setAppointment(error.message)}
+
+        )}
+        
+
     
   return (
     <>
@@ -62,7 +82,7 @@ export const NewAppointment = () => {
             </Form.Group>
             <br />
             <div className='botonModificar'>
-                <Button variant="primary" type="submit">
+                <Button variant="primary" onClick={() => newAppointment()}>
                     New Appointment
                 </Button>
             </div>

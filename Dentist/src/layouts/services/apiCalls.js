@@ -32,19 +32,8 @@ export const getTodosUsers = async (token) => {
   return await axios.get(`${root}/user/all`, config);
 }
 
-// export const reservations = async (body, token) => {
-//     var config = {
-//         headers: { 
-//         'Authorization': 'Bearer '+ token,  
-//         }
-//     };
-//     return await axios.get(`${route}/api/reservations`, body, config);
-// };
-
-
-export const nuevoAppointment = async (body) => {
-    let token = credentials.token
-    let config = {        headers: { Authorization: `Bearer ${token}` }    };
+export const nuevoAppointment = async (body, token) => {
+    let config = {        headers: { Authorization: `Bearer `+token }    };
     return await axios.post(`${root}/appointment`, body, config)
 }
 
