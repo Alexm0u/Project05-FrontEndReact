@@ -92,8 +92,7 @@ export function Login() {
               token: respuesta.data,
               usuario: decToken
             };
-            console.log(respuesta.data)
-            //Este es el momento en el que guardo en REDUX
+
             dispatch(login({ credentials: datosBackend }));
             setTimeout(() => {
                 navigate("/");

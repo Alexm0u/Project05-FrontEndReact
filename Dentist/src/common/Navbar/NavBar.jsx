@@ -4,18 +4,18 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './NavBar.css'
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { userData } from '../../layouts/userSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { userData, userout } from '../../layouts/userSlice';
 import { useEffect } from 'react';
 
 function NavBar() {
 
   const credencialesRedux = useSelector(userData);
-
-  useEffect(()=> {
-
-  })
-  
+  const dispatch = useDispatch();
+  const logout = () => {
+    dispatch(userout({ credentials: {}, token: '' }));
+    return navigate("/");
+  };
   return (
     <div className='navbarstyle'>
     <Navbar bg="light" expand="lg">
@@ -23,16 +23,29 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-          <Navbar.Brand className='Logo'>Dental Clinic Name</Navbar.Brand>
             <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/treatments">Treatments</Nav.Link>
-            <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
+            {credencialesRedux?.credentials?.usuario?.roleId === 3 ? (
+              <>
+                <Nav.Link as={Link} to='/logout' onClick={() => logout()}>Logout</Nav.Link>
+              </>
+              ) : credencialesRedux?.credentials?.usuario?.roleId === 2 ? (
+                  <>
+                  <Nav.Link as={Link} to='/logout' onClick={() => logout()}>Logout</Nav.Link>
+                  <Nav.Link as={Link} to='/newappointment'>newApp</Nav.Link>
+                </>
+                ) : credencialesRedux?.credentials?.usuario?.roleId === 1 ? (
+                  <>
+                  <Nav.Link as={Link} to='/logout' onClick={() => logout()}>Logout</Nav.Link>
+                  <Nav.Link as={Link} to='/newappointment'>newApp</Nav.Link>
+                  <Nav.Link as={Link} to='/userappoinment'>My Appoinment</Nav.Link>
+                  </>
+                  ) : (
+                  <>
+                <Nav.Link as={Link} to='/login'>Login</Nav.Link>
+                <Nav.Link as={Link} to='/register'>Register</Nav.Link>
+              </>
+                )}
             <Nav.Link as={Link} to="/about">About Us</Nav.Link>
-            <NavDropdown title="User" id="basic-nav-dropdown">
-              <NavDropdown.Item as={Link} to="/login">Login</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/register">Register</NavDropdown.Item>
-            </NavDropdown>
-            
           </Nav>
         </Navbar.Collapse>
       </Container>
