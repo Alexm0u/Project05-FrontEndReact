@@ -146,7 +146,7 @@ export function Login() {
                     </Form.Group>
                     <br />
                     <div className='botones'>
-                        <Button variant="primary" className='botonLogin' style={{ width: "5em", height: "1.9em",}} type="submit" onClick={() => logeame()}>
+                        <Button variant="primary" className='botonLogin' style={{ width: "5em", height: "1.9em",}} onClick={() => logeame()}>
                         Log Me
                         </Button>
                     </div>
