@@ -4,8 +4,18 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './NavBar.css'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { userData } from '../../layouts/userSlice';
+import { useEffect } from 'react';
 
 function NavBar() {
+
+  const credencialesRedux = useSelector(userData);
+
+  useEffect(()=> {
+
+  })
+  
   return (
     <div className='navbarstyle'>
     <Navbar bg="light" expand="lg">

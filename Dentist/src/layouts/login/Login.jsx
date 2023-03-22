@@ -96,7 +96,7 @@ export function Login() {
             //Este es el momento en el que guardo en REDUX
             dispatch(login({ credentials: datosBackend }));
             setTimeout(() => {
-                navigate("/profile");
+                navigate("/");
               }, 300);
     
             

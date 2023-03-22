@@ -6,6 +6,8 @@ import { Login } from './layouts/login/Login';
 import { Profile } from './layouts/profile/Profile';
 import { Register } from './layouts/register/Register';
 import { Treatments } from './layouts/treatments/Treatments';
+// import { Appointment } from './layouts/newAppointment/newAppointment';
+
 
 
 export const Router = () => {
@@ -19,6 +21,7 @@ export const Router = () => {
         <Route path='/treatments' element={<Treatments/>} />;
         <Route path='/about' element={<About/>} />;
         <Route path='/profile' element={<Profile/>}/>;
+        {/* <Route path='/appointment' element={<Appointment/>}/>; */}
     </Routes>
     </>
   )
