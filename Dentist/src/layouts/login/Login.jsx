@@ -5,9 +5,15 @@ import NavBar from '../../common/Navbar/NavBar';
 import { InputText } from '../../common/InputText/InputText';
 import { validate } from "../../helpers/useful";
 import { useNavigate } from "react-router-dom";
+import { logMe } from '../services/apiCalls';
+import { decodeToken } from 'react-jwt'
+import { login } from '../userSlice';
+import { useDispatch } from 'react-redux'
+
 
 export function Login() {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [credenciales, setCredenciales] = useState({
         fullName: "",
         email: "",
@@ -77,9 +83,20 @@ export function Login() {
         }));
     };
 
-    const loginUser = () => {
-        newUser(credenciales)
-            .then(() => {
+    const logeame = () => {
+        logMe(credenciales)
+          .then((respuesta) => {
+            const decToken = decodeToken (respuesta.data)
+            let datosBackend = {
+              token: respuesta.data,
+              usuario: decToken
+            };
+            console.log(respuesta.data)
+            //Este es el momento en el que guardo en REDUX
+            dispatch(login({ credentials: datosBackend }));
+    
+            //Una vez nos hemos logeado...mostramos mensaje de bienvenida...
+            setWelcome(`Bienvenid@ de nuevo ${datosBackend.usuario.name}`);
                 setTimeout(() => {
                     navigate("/profile");
                 }, 2000);
@@ -129,7 +146,7 @@ export function Login() {
                     </Form.Group>
                     <br />
                     <div className='botones'>
-                        <Button variant="primary" className='botonLogin' style={{ width: "5em", height: "1.9em",}}  type="submit">
+                        <Button variant="primary" className='botonLogin' style={{ width: "5em", height: "1.9em",}} type="submit" onClick={() => logeame()}>
                         Log Me
                         </Button>
                     </div>

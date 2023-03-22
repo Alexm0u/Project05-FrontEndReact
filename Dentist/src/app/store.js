@@ -1,7 +1,7 @@
 
 import { configureStore } from '@reduxjs/toolkit';
-import userSlice from '../pages/userSlice';
-import detailSlice from '../pages/detailSlice';
+import detailSlice from '../layouts/detailSlice';
+import userSlice from '../layouts/userSlice';
 
 import storage from 'redux-persist/lib/storage';
 import { combineReducers } from 'redux';
