@@ -19,13 +19,10 @@ export const NewAppointment = () => {
     const ReduxCredentials = useSelector(userData);
     const detallesAppointment = useSelector(appointmentData)
 
-    // const integer = parseInt(service_id, doctor_id)
+
 
     const [appointments, setAppointments] = useState({
-        // let integerservice = parseInt(service_id, 10),
-        // let integerdoctor = parseInt(doctor_id, 10),
-        // service_id: parseInt('', 10),
-        // doctor_id: parseInt('', 10),
+
         service_id: '',
         doctor_id: '',
         user_id: ReduxCredentials.credentials.usuario.userId,
@@ -33,12 +30,7 @@ export const NewAppointment = () => {
         date: '',
       });
 
-    //   const [appointments, setAppointments] = useState([]);
-
-    //   useEffect(()=>{
-    //     getUserData
-    //     console.log(ReduxCredentials,"patata")
-    // },[])
+    
     
       const inputHandler = (e) => {
         setAppointments((prevState) => ({
@@ -52,25 +44,7 @@ export const NewAppointment = () => {
 
     const checkError = (e) => {
     }
-//     const registerappointment = () => {
-//       nuevoAppointment(appointments)
-//       .then(() => {
-//         // console.log("este es el  token decodificado",)
-//         let token = ReduxCredentials.credentials.token
-//         console.log("esto es ", token)
-//         //   console.log(token)
-//           //Este es el momento en el que guardo en REDUX
-//           // console.log("este es el token decofdificado", decodificado)
-//           // console.log("este es datosBacked", datosBackend)
-//           // console.log("este es respuesta", respuesta)
-//         //   setWelcome(`Bienvenid@ de nuevo ${datosBackend.usuario.fullName}`);
-//   //Redirección a Home
-//   // setTimeout(() => {
-//   //     navigate("/login");
-//   //   }, 3000);
-//   })
-//   .catch(error => console.log(error))
-// };
+//     
 
 
 
@@ -79,38 +53,17 @@ const registerappointment = () => {
     nuevoAppointment(appointments, ReduxCredentials.credentials.token)
         .then(resultado => {
             setAppointments(resultado.data)
-            // console.log(resultado)
-            //Después de haber realizado el pedido, llevamos al user a su perfil
-            // setTimeout(()=>{
-            //     navigate('/profile');
-            // },1500);
+            console.log(resultado)
+
+            setTimeout(()=>{
+                navigate('/profile');
+            },1500);
         })
         .catch(error => {
             console.error(error.message);
         });
 }
 
-
-
-
-
-// const citas = (token) => {
-        
-//     //Primero guardo en RDX los datos escogidos...
-
-//     dispatch(addChoosen({ choosenObject: token }))
-
-//     setTimeout(()=>{
-//         navigate("/detail");
-//     },500)
-// }
-
-        //   .then(() => {
-        //     console.log("trying appointment")
-        //     //   setTimeout(() => {
-        //     //       navigate("/login");
-        //     //   }, 2000);
-        //   })
 
     return (
         <>
@@ -148,7 +101,7 @@ const registerappointment = () => {
             <br />
             <div className='botonModificar'>
                 <Button variant="primary" onClick={registerappointment}>
-                    Nueva Cita
+                    Create Appointment
                 </Button>
             </div>
         </Form>

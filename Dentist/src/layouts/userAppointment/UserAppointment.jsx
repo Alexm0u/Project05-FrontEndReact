@@ -4,6 +4,7 @@ export const UserAppointment = () => {
   return (
     <>
      <NavBar />
+     <hr />
      </>
   )
 }

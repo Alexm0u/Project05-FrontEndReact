@@ -64,6 +64,7 @@ export const GetAllUsers = () => {
                 (<div>ESTAN VINIENDO</div>)
             }
          </div>
-      </>
+        
+         </>
     );
 }

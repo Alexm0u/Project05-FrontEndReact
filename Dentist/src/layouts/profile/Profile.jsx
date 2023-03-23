@@ -26,7 +26,7 @@ export function Profile() {
   return (
     <>
       <NavBar />
-
+      <hr />
       <div style={{
         display: 'block',
         width: 700,

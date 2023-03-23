@@ -5,7 +5,7 @@ export const Treatments = () => {
   return (
     <>
     <NavBar />
-    
+    <hr />
     <div>Estás en la página Treatments</div>
 
 
