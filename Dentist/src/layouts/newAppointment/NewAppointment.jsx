@@ -72,28 +72,28 @@ const registerappointment = () => {
         <div style={{ display: 'block', 
                     width: 700, 
                     padding: 30 }}>
-        <h4>React-Bootstrap Form Component</h4>
+        <h4>New appointment</h4>
         <Form>
             <Form.Group>
-                <Form.Label>Service Id:</Form.Label>
+                <Form.Label>Treatment:</Form.Label>
                 <InputText className={"service_id"}
-                                type={"number"} name={"service_id"} placeholder={"service_id"} required={true}
+                                type={"number"} name={"service_id"} placeholder={"Choose your treatment"} required={true}
                                 changeFunction={(e) => inputHandler(e)} blurFunction={(e) => checkError(e)} />
             </Form.Group>
             <Form.Group>
-                <Form.Label>doctor_id:</Form.Label>
+                <Form.Label>Doctor:</Form.Label>
                 <InputText className={"inputProfile"}
-                                type={"number"} name={"doctor_id"} placeholder={"doctor_id"} required={true}
+                                type={"number"} name={"doctor_id"} placeholder={"Choose your doctor"} required={true}
                                 changeFunction={(e) => inputHandler(e)} blurFunction={(e) => checkError(e)} />
             </Form.Group>
             <Form.Group>
-                <Form.Label>payment:</Form.Label>
+                <Form.Label>Payment method:</Form.Label>
                 <InputText className={"payment"}
-                                type={"boolean"} name={"payment"} placeholder={"payment"} required={true}
+                                type={"boolean"} name={"payment"} placeholder={"Cash / Card"} required={true}
                                 changeFunction={(e) => inputHandler(e)} blurFunction={(e) => checkError(e)} />
             </Form.Group>
             <Form.Group>
-                <Form.Label>date:</Form.Label>
+                <Form.Label>Date and hour:</Form.Label>
                 <InputText className={"date"}
                                 type={"datetime-local"} name={"date"} placeholder={"date"} required={true}
                                 changeFunction={(e) => inputHandler(e)} blurFunction={(e) => checkError(e)} />

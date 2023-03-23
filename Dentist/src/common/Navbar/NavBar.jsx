@@ -40,6 +40,7 @@ function NavBar() {
                   <Nav.Link as={Link} to='/logout' onClick={() => logout()}>Logout</Nav.Link>
                   <Nav.Link as={Link} to='/newappointment'>newApp</Nav.Link>
                   <Nav.Link as={Link} to='/userappoinment'>My Appoinment</Nav.Link>
+                  {/* <Nav.Link as={Link} to='/appointment/myappoinment'>My Appoinment</Nav.Link> */}
                   </>
                   ) : (
                   <>
