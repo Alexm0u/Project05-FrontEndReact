@@ -6,21 +6,25 @@ import { Form, Button } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { userData } from '../userSlice';
 import { useNavigate } from 'react-router-dom';
+// import { appointmentData } from '../appointmentSlice';
+
 
 export const NewAppointment = () => {
 
     const credencialesRedux = useSelector(userData);
-    // const navigate = useNavigate();
-    console.log(credencialesRedux.credentials.usuario)
+    const navigate = useNavigate();
+    const detailAppointment = useSelector(appointmentData)
+    // console.log(credencialesRedux.credentials.usuario.userId)
+            useEffect(()=>{
+            if (appointment.name === ""){
+                nuevoAppointment().then(
+                    resultado => {console.log(resultado)}
+                ).catch(error => (console.log(error)))
+            }
+        }, [appointment]);
    
 
-        const [appointment, setAppointment] = useState({
-            service_id: '',
-            doctor_id: '',
-            user_id:'',
-            payment: '',
-            date: '',
-        });
+        const [appointment, setAppointment] = useState([]);
 
         const inputHandler =(e) => {
             setAppointment((prevState) => ({
@@ -28,13 +32,7 @@ export const NewAppointment = () => {
                 [e.target.name]: e.target.value,
             }));
         };
-        // useEffect(()=>{
-        //     if (appointment.name === ""){
-        //         nuevoAppointment().then(
-        //             resultado => {console.log(resultado)}
-        //         ).catch(error => (console.log(error)))
-        //     }
-        // }, [appointment]);
+
 
         const checkError = (e) => {}
 

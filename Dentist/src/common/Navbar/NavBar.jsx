@@ -27,11 +27,13 @@ function NavBar() {
             {credencialesRedux?.credentials?.usuario?.roleId === 3 ? (
               <>
                 <Nav.Link as={Link} to='/logout' onClick={() => logout()}>Logout</Nav.Link>
+                <Nav.Link as={Link} to='/user/all'>allUsers</Nav.Link>
               </>
               ) : credencialesRedux?.credentials?.usuario?.roleId === 2 ? (
                   <>
                   <Nav.Link as={Link} to='/logout' onClick={() => logout()}>Logout</Nav.Link>
                   <Nav.Link as={Link} to='/newappointment'>newApp</Nav.Link>
+                  <Nav.Link as={Link} to='/user/all'>allUsers</Nav.Link>
                 </>
                 ) : credencialesRedux?.credentials?.usuario?.roleId === 1 ? (
                   <>
