@@ -8,6 +8,7 @@ import { Profile } from './layouts/profile/Profile';
 import { Register } from './layouts/register/Register';
 import { Treatments } from './layouts/treatments/Treatments';
 import { UserAppointment } from './layouts/userAppointment/UserAppointment';
+import { Users } from './layouts/users/Users';
 
 
 
@@ -25,6 +26,7 @@ export const Router = () => {
         <Route path='/profile' element={<Profile/>}/>;
         <Route path='/newappointment' element={<NewAppointment/>}/>;
         <Route path='/userappointment' element={<UserAppointment/>}/>;
+        <Route path='/users' element={<Users/>}/>;
     </Routes>
     </>
   )

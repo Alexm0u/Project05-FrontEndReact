@@ -5,11 +5,14 @@ import { nuevoAppointment } from '../services/apiCalls';
 import { Form, Button } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { userData } from '../userSlice';
+import { useNavigate } from 'react-router-dom';
 
 export const NewAppointment = () => {
 
     const credencialesRedux = useSelector(userData);
-    console.log(credencialesRedux.credentials.token)
+    // const navigate = useNavigate();
+    console.log(credencialesRedux.credentials.usuario)
+   
 
         const [appointment, setAppointment] = useState({
             service_id: '',
@@ -37,7 +40,7 @@ export const NewAppointment = () => {
 
         const newAppointment = () => {
             nuevoAppointment(appointment, credencialesRedux.credentials.token )
-            console.log(regAppointment)
+
             .then(regAppointment => {
                 setAppointment(regAppointment.data)
                 
