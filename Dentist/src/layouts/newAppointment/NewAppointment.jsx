@@ -103,18 +103,17 @@ export const NewAppointment = () => {
               )
             })}
           </Form.Select>
-          <Form.Group>
-            <Form.Label>Payment method:</Form.Label>
-            <InputText
-              className={"payment"}
-              type={"boolean"}
-              name={"payment"}
-              placeholder={"Cash / Card"}
-              required={true}
-              changeFunction={(e) => inputHandler(e)}
-              blurFunction={(e) => checkError(e)}
-            />
-          </Form.Group>
+          <Form.Select name={"payment_id"} onChange={(e) => inputHandler(e)} aria-label="Default select example">
+            <option>Choose payment method:</option>
+            <option value="1">Cash</option>
+            <option value="2">Card</option>
+
+            {/* {doctors.map((doctor) => {
+              return (
+                <option value={doctor.id}>{doctor.specialtyname}</option>
+              )
+            })} */}
+          </Form.Select>
           <Form.Group>
             <Form.Label>Date and hour:</Form.Label>
             <InputText
