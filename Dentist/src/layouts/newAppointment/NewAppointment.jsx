@@ -20,12 +20,22 @@ export const NewAppointment = () => {
 
   const [treatments, setTreatments] = useState([
     {
-        id:1,
-        servicename: "Extraccion"
+      id: 1,
+      servicename: "Cleaning"
     },
     {
-        id:2,
-        servicename: "blanqueamiento"
+      id: 2,
+      servicename: "Broken Teeth"
+    }
+  ]);
+  const [doctors, setDoctors] = useState([
+    {
+      id: 1,
+      specialtyname: "Orthodontics"
+    },
+    {
+      id: 2,
+      specialtyname: "Oral Surgery"
     }
   ]);
 
@@ -46,7 +56,7 @@ export const NewAppointment = () => {
   };
   console.log(appointments);
 
-  const checkError = (e) => {};
+  const checkError = (e) => { };
   //
 
   const registerappointment = () => {
@@ -71,32 +81,28 @@ export const NewAppointment = () => {
       <div style={{ display: "block", width: 700, padding: 30 }}>
         <h4>New appointment</h4>
         <Form>
-          <Form.Select  name={"service_id"} onChange={(e) => inputHandler(e)} aria-label="Default select example">
-            <option>Open this select menu</option>
+          <Form.Select name={"service_id"} onChange={(e) => inputHandler(e)} aria-label="Default select example">
+            <option>Choose your treatment:</option>
             {/* <option value="1">Extraccion</option>
             <option value="2">Blanqueamiento</option> */}
 
-            {treatments.map((treatment)=> {
-                return (
-                    <option value={treatment.id}>{treatment.servicename}</option>
-                )
+            {treatments.map((treatment) => {
+              return (
+                <option value={treatment.id}>{treatment.servicename}</option>
+              )
             })}
-
-
-
           </Form.Select>
-          <Form.Group>
-            <Form.Label>Doctor:</Form.Label>
-            <InputText
-              className={"inputProfile"}
-              type={"text"}
-              name={"doctor_id"}
-              placeholder={"Choose your doctor"}
-              required={true}
-              changeFunction={(e) => inputHandler(e)}
-              blurFunction={(e) => checkError(e)}
-            />
-          </Form.Group>
+          <Form.Select name={"doctor_id"} onChange={(e) => inputHandler(e)} aria-label="Default select example">
+            <option>Choose Doctor Specialist:</option>
+            {/* <option value="1">Extraccion</option>
+            <option value="2">Blanqueamiento</option> */}
+
+            {doctors.map((doctor) => {
+              return (
+                <option value={doctor.id}>{doctor.specialtyname}</option>
+              )
+            })}
+          </Form.Select>
           <Form.Group>
             <Form.Label>Payment method:</Form.Label>
             <InputText
