@@ -6,11 +6,12 @@ import NavBar from '../../common/Navbar/NavBar';
 import { getAppointmentAsUser } from "../services/apiCalls";
 import { userData } from "../userSlice";
 
-export const GetAppointmentasUser = () => {
+export const GetAppointmentAsUser = () => {
 
-    const ReduxCredentials = useSelector(userData);
-
-    const [appointments, setAppointments] = useState([]);
+  const [appointments, setAppointments] = useState([]);  
+  const ReduxCredentials = useSelector(userData);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
     useEffect(() => {
       if (ReduxCredentials.credentials.token) {

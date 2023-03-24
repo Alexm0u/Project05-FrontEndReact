@@ -7,19 +7,15 @@ import { addChoosen } from '../detailSlice';
 import { getTodosUsers } from '../services/apiCalls';
 import { userData } from '../userSlice';
 
-
-
 export const GetAllUsers = () => {
     
     const [users, setUsers] = useState([]);
-      const ReduxCredentials = useSelector(userData);
-      const dispatch = useDispatch();
-      const navigate = useNavigate();
+    const ReduxCredentials = useSelector(userData);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-      useEffect(()=>{
-        // console.log("console log de users", users)      // Este saca los el array con los usuarios
+    useEffect(()=>{
         if(users.length === 0){
-            // console.log(ReduxCredentials.credentials?.token)
             getTodosUsers(ReduxCredentials.credentials?.token)
                 .then(
                     result => {

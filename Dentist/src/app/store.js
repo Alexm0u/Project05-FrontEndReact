@@ -6,12 +6,13 @@ import storage from 'redux-persist/lib/storage';
 import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import thunk from 'redux-thunk';
-// import  appointmentSlice  from '../layouts/appointmentSlice';
+import appointmentSlice from '../layouts/appointmentSlice';
+
 
 const reducers = combineReducers({
     user: userSlice,
     detail: detailSlice,
-    // appointment: appointmentSlice
+    appointment: appointmentSlice,
 })
 
 const persistConfig = {

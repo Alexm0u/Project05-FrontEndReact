@@ -60,6 +60,8 @@ export function Register() {
         }
         setRegisterAct(true);
     });
+console.log(valiUser, "holsssss")
+console.log(credenciales, "sdfadfddsf")
 
     const checkError = (e) => {
         let error = "";
