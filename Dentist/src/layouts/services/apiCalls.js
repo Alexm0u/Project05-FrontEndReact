@@ -38,7 +38,7 @@ export const nuevoAppointment = async (body, token) => {
 }
 export const getAppointmentAsUser = async (token) => {
   let config = {        headers: { Authorization: `Bearer `+token }    };
-  return await axios.get(`${root}/appointmentuser`, config, token)
+  return await axios.get(`${root}/appointmentuser`, config,)
 }
 
 
