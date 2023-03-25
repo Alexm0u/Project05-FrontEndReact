@@ -31,11 +31,11 @@ export const NewAppointment = () => {
   const [doctors, setDoctors] = useState([
     {
       id: 1,
-      specialty: "Orthodontics"
+      specialtyname: "Orthodontics"
     },
     {
       id: 2,
-      specialty: "Oral Surgery"
+      specialtyname: "Oral Surgery"
     }
   ]);
 
@@ -43,7 +43,7 @@ export const NewAppointment = () => {
     service_id: "",
     doctor_id: "",
     user_id: ReduxCredentials.credentials.usuario.userId,
-    payment: "",
+    payment_id: "",
     date: "",
   });
 
@@ -67,7 +67,7 @@ export const NewAppointment = () => {
 
         setTimeout(() => {
           navigate("/profile");
-        }, 1500);
+        }, 1000);
       })
       .catch((error) => {
         console.error(error.message);
@@ -97,14 +97,14 @@ export const NewAppointment = () => {
 
             {doctors.map((doctor) => {
               return (
-                <option key={doctor.id} value={doctor.id}>{doctor.specialty}</option>
+                <option key={doctor.id} value={doctor.id}>{doctor.specialtyname}</option>
               )
             })}
           </Form.Select>
           <Form.Select name={"payment_id"} onChange={(e) => inputHandler(e)} aria-label="Default select example">
             <option>Choose payment method:</option>
-            <option value="0">Cash</option>
-            <option value="1">Card</option>
+            <option value="true">Cash</option>
+            <option value="false">Card</option>
 
           </Form.Select>
           <Form.Group>

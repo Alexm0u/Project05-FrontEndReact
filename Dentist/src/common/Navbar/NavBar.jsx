@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { userData, userout } from '../../layouts/userSlice';
 import { useEffect } from 'react';
+import { addChoosen } from '../../layouts/detailSlice';
 
 function NavBar() {
 
