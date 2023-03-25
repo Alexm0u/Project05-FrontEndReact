@@ -66,7 +66,7 @@ export const NewAppointment = () => {
         console.log(resultado);
 
         setTimeout(() => {
-          navigate("/profile");
+          navigate("/user/profile");
         }, 1000);
       })
       .catch((error) => {
