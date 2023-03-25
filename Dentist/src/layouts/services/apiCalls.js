@@ -10,8 +10,8 @@ export const newUser = async (body) => {
     return await axios.post(`${root}/user`, body)
 }
 
-export const getUserData = async () => {
-    let config = {        headers: { Authorization: `Bearer ${credentials.token}` }    };
+export const getUserData = async (token) => {
+    let config = {        headers: { Authorization: `Bearer ${token}` }    };
     return await axios.get(`${root}/user/myprofile`, config)
 }
 

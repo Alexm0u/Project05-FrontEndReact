@@ -7,8 +7,9 @@ import { validate } from '../../helpers/useful';
 import Button from 'react-bootstrap/Button';
 import { getUserData } from '../services/apiCalls';
 import { userData } from '../userSlice';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Card, ListGroup } from 'react-bootstrap';
+import { detailData } from '../detailSlice';
 
 
 export const Profile = () => {
@@ -28,7 +29,7 @@ export const Profile = () => {
       if (users.name === "") {
           getUserData(ReduxCredentials.credentials.token)
           .then((result) => {
-          // console.log(result.data.data);
+          console.log(result.data.data);
           setUsers({
               fullName: result.data.data.fullName,
               email: result.data.data.email,

@@ -3,16 +3,15 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import NavBar from '../../common/Navbar/NavBar';
-import { getAppointmentAsUser } from "../services/apiCalls";
+import { getAppointmentAsUser } from '../services/apiCalls';
 import { userData } from "../userSlice";
 
 export const GetAppointmentAsUser = () => {
 
-  const [appointments, setAppointments] = useState([]);  
-  const ReduxCredentials = useSelector(userData);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+    const ReduxCredentials = useSelector(userData);
 
+    const [appointments, setAppointments] = useState([]);
+  
     useEffect(() => {
       if (ReduxCredentials.credentials.token) {
         getAppointmentAsUser(ReduxCredentials.credentials?.token)
@@ -59,7 +58,7 @@ export const GetAppointmentAsUser = () => {
                 </Col>
             </Row>
         </Container>
-
+         
       </>
     );
 }
