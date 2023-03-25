@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import './NavBar.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { userData, userout } from '../../layouts/userSlice';
 import { useEffect } from 'react';
@@ -11,7 +11,11 @@ import { useEffect } from 'react';
 function NavBar() {
 
   const credencialesRedux = useSelector(userData);
+
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+
   const logout = () => {
     dispatch(userout({ credentials: {}, token: '' }));
     return navigate("/");
@@ -40,6 +44,7 @@ function NavBar() {
                   <Nav.Link as={Link} to='/logout' onClick={() => logout()}>Logout</Nav.Link>
                   <Nav.Link as={Link} to='/newappointment'>newApp</Nav.Link>
                   <Nav.Link as={Link} to='/userappoinment'>My Appoinment</Nav.Link>
+                  <Nav.Link as={Link} to='/user/myprofile'>Profile</Nav.Link>
                   {/* <Nav.Link as={Link} to='/appointment/myappoinment'>My Appoinment</Nav.Link> */}
                   </>
                   ) : (

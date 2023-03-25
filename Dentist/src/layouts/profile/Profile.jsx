@@ -1,70 +1,62 @@
 import React, {useState, useEffect} from 'react';
 import NavBar from '../../common/Navbar/NavBar';
 import './Profile.css';
-import { Form } from 'react-bootstrap';
-import { InputText } from '../../common/InputText/InputText';
+
+
 import { validate } from '../../helpers/useful';
 import Button from 'react-bootstrap/Button';
+import { getUserData } from '../services/apiCalls';
+import { userData } from '../userSlice';
+import { useSelector } from 'react-redux';
+import { Card, ListGroup } from 'react-bootstrap';
 
 
-export function Profile() {
-
-  let user = {
-    fullName: '',
-    dni: '',
-    phone: '',
-    email: '',
-  };
-  const [valor, setValor] = useState(user);
-  const { fullName, dni, phone, email } = valor;
-  const newValue = ({ target }) => {
-    console.log(target);
-    const { name, value } = target;
-    setValor({ ...valor, [name]: value });
+export const Profile = () => {
+  const [users, setUsers] = useState({
+      name: "",
+      surname: "",
+      nif: "",
+      birth_date: "",
+      direction: "",
+      email: "",
+      phone: ""
   }
-
-  return (
-    <>
-      <NavBar />
-      <hr />
-      <div style={{
-        display: 'block',
-        width: 700,
-        padding: 30
-      }}>
-        <h4>Please fill the fields</h4>
-        <Form>
-          <Form.Group>
-            <Form.Label>Full Name:</Form.Label>
-            <Form.Control type="text"   name="fullName" placeholder="Name and surname..."  value={fullName} onChange={newValue}/>
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>DNI:</Form.Label>
-            <Form.Control type="text"   name="dni" placeholder="DNI / NIF..."  value={dni} onChange={newValue}/>
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Phone:</Form.Label>
-            <Form.Control type="tel"   name="phone" placeholder="Phone number..."  value={phone} onChange={newValue}/>
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Email:</Form.Label>
-            <Form.Control type="email"  name="email" placeholder="Email..."  value={email} onChange={newValue}/>
-          </Form.Group>
-          <br />
-          <Form.Select aria-label="Payment Method">
-            <option>Payment method</option>
-            <option value="1">Card</option>
-            <option value="2">Cash</option>
-            <option value="3">Paypal</option>
-          </Form.Select>
-          <br />
-          <div className='updateButton'>
-            <Button variant="primary" type="submit">
-              Update
-            </Button>
-          </div>
-        </Form>
-      </div>
-    </>
   );
+  const ReduxCredentials = useSelector(userData);
+
+  useEffect(() => {
+      if (users.name === "") {
+          getUserData(ReduxCredentials.credentials.token)
+          .then((result) => {
+          // console.log(result.data.data);
+          setUsers({
+              fullName: result.data.data.fullName,
+              email: result.data.data.email,
+              dni_nif: result.data.data.dni_nif,
+              payment: result.data.data.payment,
+              phone: result.data.data.phone,
+              role_id: result.data.data.role_id,
+          });
+          })
+          .catch((error) => console.log(error));
+      }
+  }, [users]);
+  console.log(users);
+   return (
+      <>
+      <NavBar />
+       <div className='divCard'>
+          <Card style={{ width: '20rem' }}>
+              <ListGroup variant="flush">
+                  <ListGroup.Item>Nombre Usuario:{users.fullName}</ListGroup.Item>
+                  <ListGroup.Item>Email: {users.email}</ListGroup.Item>
+                  <ListGroup.Item>Dni_Nif:{users.dni_nif}</ListGroup.Item>
+                  <ListGroup.Item>Default Payment: {users.payment}</ListGroup.Item>
+                  <ListGroup.Item>Phone number: {users.phone}</ListGroup.Item>
+                  <ListGroup.Item>Role Id: {users.role_id}</ListGroup.Item>
+              </ListGroup>
+          </Card>
+       </div>
+       </>
+   )
 }

@@ -31,11 +31,11 @@ export const NewAppointment = () => {
   const [doctors, setDoctors] = useState([
     {
       id: 1,
-      specialtyname: "Orthodontics"
+      specialty: "Orthodontics"
     },
     {
       id: 2,
-      specialtyname: "Oral Surgery"
+      specialty: "Oral Surgery"
     }
   ]);
 
@@ -88,24 +88,23 @@ export const NewAppointment = () => {
 
             {treatments.map((treatment) => {
               return (
-                <option value={treatment.id}>{treatment.servicename}</option>
+                <option key={treatment.id} value={treatment.id}>{treatment.servicename}</option>
               )
             })}
           </Form.Select>
           <Form.Select name={"doctor_id"} onChange={(e) => inputHandler(e)} aria-label="Default select example">
             <option>Choose Doctor Specialist:</option>
 
-
             {doctors.map((doctor) => {
               return (
-                <option value={doctor.id}>{doctor.specialtyname}</option>
+                <option key={doctor.id} value={doctor.id}>{doctor.specialty}</option>
               )
             })}
           </Form.Select>
           <Form.Select name={"payment_id"} onChange={(e) => inputHandler(e)} aria-label="Default select example">
             <option>Choose payment method:</option>
-            <option value="1">Cash</option>
-            <option value="2">Card</option>
+            <option value="0">Cash</option>
+            <option value="1">Card</option>
 
           </Form.Select>
           <Form.Group>
