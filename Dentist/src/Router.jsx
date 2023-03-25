@@ -9,6 +9,7 @@ import { Register } from './layouts/register/Register';
 import { Treatments } from './layouts/treatments/Treatments';
 import { GetAppointmentAsUser } from './layouts/userAppointment/UserAppointment';
 import { GetAllUsers } from './layouts/getUsersAsAdmin/GetUsers';
+import { UserDetails } from './layouts/getUsersAsAdmin/UserDetail/GetUsersDetail';
 
 
 
@@ -28,6 +29,7 @@ export const Router = () => {
         <Route path='/newappointment' element={<NewAppointment/>}/>;
         <Route path='/userappointment' element={<GetAppointmentAsUser/>}/>;
         <Route path='/user/all' element={<GetAllUsers />} />
+        <Route path='/user/all/details' element={<UserDetails />} />
     </Routes>
     </>
   )

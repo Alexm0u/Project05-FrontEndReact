@@ -94,8 +94,7 @@ export const NewAppointment = () => {
           </Form.Select>
           <Form.Select name={"doctor_id"} onChange={(e) => inputHandler(e)} aria-label="Default select example">
             <option>Choose Doctor Specialist:</option>
-            {/* <option value="1">Extraccion</option>
-            <option value="2">Blanqueamiento</option> */}
+
 
             {doctors.map((doctor) => {
               return (
@@ -108,11 +107,6 @@ export const NewAppointment = () => {
             <option value="1">Cash</option>
             <option value="2">Card</option>
 
-            {/* {doctors.map((doctor) => {
-              return (
-                <option value={doctor.id}>{doctor.specialtyname}</option>
-              )
-            })} */}
           </Form.Select>
           <Form.Group>
             <Form.Label>Date and hour:</Form.Label>
