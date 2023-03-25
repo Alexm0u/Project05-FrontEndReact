@@ -6,7 +6,7 @@ import NavBar from '../../common/Navbar/NavBar';
 import { getAppointmentAsUser } from '../services/apiCalls';
 import { userData } from "../userSlice";
 
-export const GetAppointmentAsUser = () => {
+export const CatchAppointmentAsUser = () => {
 
     const ReduxCredentials = useSelector(userData);
 

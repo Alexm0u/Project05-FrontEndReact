@@ -7,7 +7,7 @@ import { NewAppointment } from './layouts/newAppointment/NewAppointment';
 import { Profile } from './layouts/profile/Profile';
 import { Register } from './layouts/register/Register';
 import { Treatments } from './layouts/treatments/Treatments';
-import { GetAppointmentAsUser } from './layouts/userAppointment/UserAppointment';
+import { CatchAppointmentAsUser } from './layouts/userAppointment/UserAppointment';
 import { GetAllUsers } from './layouts/getUsersAsAdmin/GetUsers';
 import { UserDetails } from './layouts/getUsersAsAdmin/UserDetail/GetUsersDetail';
 
@@ -27,7 +27,7 @@ export const Router = () => {
         <Route path='/about' element={<About/>} />;
         <Route path='/user/profile' element={<Profile/>}/>;
         <Route path='/newappointment' element={<NewAppointment/>}/>;
-        <Route path='/appointment/myappointment' element={<GetAppointmentAsUser/>}/>;
+        <Route path='/appointment/myappointment' element={<CatchAppointmentAsUser/>}/>;
         <Route path='/user/all' element={<GetAllUsers />} />
         <Route path='/user/all/details' element={<UserDetails />} />
     </Routes>
