@@ -46,12 +46,13 @@ export const Profile = () => {
    return (
       <>
       <NavBar />
+      <hr />
        <div className='divCard'>
           <Card style={{ width: '20rem' }}>
               <ListGroup variant="flush">
-                  <ListGroup.Item>Nombre Usuario:{users.fullName}</ListGroup.Item>
+                  <ListGroup.Item>Name: {users.fullName}</ListGroup.Item>
                   <ListGroup.Item>Email: {users.email}</ListGroup.Item>
-                  <ListGroup.Item>Dni_Nif:{users.dni_nif}</ListGroup.Item>
+                  <ListGroup.Item>Dni_Nif: {users.dni_nif}</ListGroup.Item>
                   <ListGroup.Item>Default Payment: {users.payment}</ListGroup.Item>
                   <ListGroup.Item>Phone number: {users.phone}</ListGroup.Item>
                   <ListGroup.Item>Role Id: {users.role_id}</ListGroup.Item>

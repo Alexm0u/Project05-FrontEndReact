@@ -108,6 +108,7 @@ export function Login() {
     return (
         <>
             <NavBar />
+            <hr />
             <div className='zonaLogin'><div style={{ display: 'block', width: 700, padding: 30 }}>
                 <div className='formulario'>
                     <Form>
