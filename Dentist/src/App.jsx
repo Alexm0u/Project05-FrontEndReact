@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import React from 'react';
+import Background from './img/background.png'
 
 
 function App() {
@@ -6,6 +8,7 @@ function App() {
 
   return (
     <div className="App">
+      <img src={Background} alt="background" className="background" />
       
     </div>
   )
