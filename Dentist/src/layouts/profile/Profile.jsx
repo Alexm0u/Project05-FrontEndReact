@@ -52,8 +52,8 @@ export const Profile = () => {
               <ListGroup variant="flush">
                   <ListGroup.Item>Name: {users.fullName}</ListGroup.Item>
                   <ListGroup.Item>Email: {users.email}</ListGroup.Item>
-                  <ListGroup.Item>Dni_Nif: {users.dni_nif}</ListGroup.Item>
-                  <ListGroup.Item>Phone number: {users.phone}</ListGroup.Item>
+                  {/* <ListGroup.Item>Dni_Nif: {users.dni_nif}</ListGroup.Item>
+                  <ListGroup.Item>Phone number: {users.phone}</ListGroup.Item> */}
               </ListGroup>
           </Card>
        </div>
