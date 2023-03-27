@@ -109,7 +109,7 @@ export function Login() {
         <>
             <NavBar />
             <hr />
-            <div className='zonaLogin'><div style={{ display: 'block', width: 700, padding: 30 }}>
+            <div className='zonaLogin'><div>
                 <div className='formulario'>
                     <Form>
                         <Form.Group>

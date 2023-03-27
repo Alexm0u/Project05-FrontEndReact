@@ -97,7 +97,7 @@ console.log(credenciales, "sdfadfddsf")
         <>
             <NavBar />
             <hr />
-            <div style={{ display: "block", width: 700, padding: 30 }}>
+            <div>
                 <h4>New User:</h4>
                 <Container>
                     <Row className="registerForm">
