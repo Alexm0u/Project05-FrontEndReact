@@ -54,7 +54,6 @@ export const Profile = () => {
                   <ListGroup.Item>Email: {users.email}</ListGroup.Item>
                   <ListGroup.Item>Dni_Nif: {users.dni_nif}</ListGroup.Item>
                   <ListGroup.Item>Phone number: {users.phone}</ListGroup.Item>
-                  <ListGroup.Item>Role Id: {users.role_id}</ListGroup.Item>
               </ListGroup>
           </Card>
        </div>
