@@ -97,9 +97,8 @@ console.log(credenciales, "sdfadfddsf")
         <>
             <NavBar />
             <hr />
-            <div>
+            <div className="container">
                 <h4>New User:</h4>
-                <Container>
                     <Row className="registerForm">
                         <Col lg={6}>
                             <Form>
@@ -177,7 +176,7 @@ console.log(credenciales, "sdfadfddsf")
                             </Form>
                         </Col>
                     </Row>
-                </Container>
+                
             </div>
         </>
     );

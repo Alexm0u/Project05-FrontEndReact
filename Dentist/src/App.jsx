@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="App">
-      <img src={Background} alt="background" className="background" />
+      
       
     </div>
   )
