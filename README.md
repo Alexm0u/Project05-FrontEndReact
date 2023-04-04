@@ -1,6 +1,6 @@
 # Welcome to my frontend app  
 README EN DESARROLLO
-<!-- <details>
+<details>
   <summary>Contenido 📝</summary>
   <ol>
     <li><a href="#objetivo-🎯">Objetivo</a></li>
